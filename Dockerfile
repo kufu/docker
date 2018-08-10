@@ -25,7 +25,7 @@ RUN apt-get update \
 
 # set locale
 RUN localedef -i ja_JP -c -f UTF-8 -A /usr/share/locale/locale.alias ja_JP.UTF-8
-ENV LANG ja_JP.utf8
+# ENV LANG ja_JP.utf8
 
 # add citus to default PostgreSQL config
 RUN echo "shared_preload_libraries='citus'" >> /usr/share/postgresql/postgresql.conf.sample
