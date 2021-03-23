@@ -1,5 +1,5 @@
 FROM postgres:12.1-alpine
-ARG VERSION=9.0.1
+ARG VERSION=9.1.1
 LABEL maintainer="Citus Data https://citusdata.com" \
       org.label-schema.name="Citus" \
       org.label-schema.description="Scalable PostgreSQL for multi-tenant and real-time workloads" \
@@ -16,6 +16,8 @@ RUN apk add --no-cache \
         curl-dev \
         openssl-dev \
         ca-certificates \
+        clang \
+        llvm \
         icu-dev && \
     apk add --no-cache libcurl && \
     curl -sfLO "https://github.com/citusdata/citus/archive/v${VERSION}.tar.gz" && \
